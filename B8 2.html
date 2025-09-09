@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #3f51b5;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .quotes {
+      text-align: center;
+      font-size: 18px;
+      margin: 30px auto;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .question {
+      text-align: center;
+      font-size: 22px;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .cloud {
+      flex: 1 1 200px;
+      text-align: center;
+      padding: 20px;
+      background: #fefefe;
+      border: 2px solid #3f51b5;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cloud:hover {
+      background: rgba(63, 81, 181, 0.1);
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .books {
+      display: none;
+      text-align: center;
+      margin: 20px auto;
+      max-width: 900px;
+    }
+
+    .books img {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .books img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      background: #3f51b5;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>LIBRARY</header>
+
+  <div class="quotes">
+    ✱ Don’t judge a book by its cover <br>
+    ✱ Books are which improves our knowledge
+  </div>
+
+  <div class="question">
+    Which type of book do you want study?
+  </div>
+
+  <div class="container">
+    <div class="cloud" onclick="toggleBooks('history')">HISTORY</div>
+    <div class="cloud" onclick="toggleBooks('inspiration')">INSPIRATIONALS</div>
+    <div class="cloud" onclick="toggleBooks('mythology')">MYTHOLOGY</div>
+    <div class="cloud" onclick="toggleBooks('business')">BUSINESS</div>
+    <div class="cloud" onclick="toggleBooks('motivational')">MOTIVATIONAL</div>
+    <div class="cloud" onclick="toggleBooks('skills')">IMPROVEMENT OF SKILLS</div>
+    <div class="cloud" onclick="toggleBooks('others')">OTHERS</div>
+  </div>
+
+  <!-- Book Sections -->
+  <div id="history" class="books">
+    <h2>History Books</h2>
+    <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg" alt="History Book 1">
+    <img src="https://covers.openlibrary.org/b/id/240727-L.jpg" alt="History Book 2">
+    <img src="https://covers.openlibrary.org/b/id/10958305-L.jpg" alt="History Book 3">
+  </div>
+
+  <div id="inspiration" class="books">
+    <h2>Inspirational Books</h2>
+    <img src="https://covers.openlibrary.org/b/id/240726-L.jpg" alt="Inspirational 1">
+    <img src="https://covers.openlibrary.org/b/id/5541065-L.jpg" alt="Inspirational 2">
+    <img src="https://covers.openlibrary.org/b/id/8091016-L.jpg" alt="Inspirational 3">
+  </div>
+
+  <div id="mythology" class="books">
+    <h2>Mythology Books</h2>
+    <img src="https://covers.openlibrary.org/b/id/240720-L.jpg" alt="Mythology 1">
+    <img src="https://covers.openlibrary.org/b/id/8225631-L.jpg" alt="Mythology 2">
+    <img src="https://covers.openlibrary.org/b/id/8232921-L.jpg" alt="Mythology 3">
+  </div>
+
+  <div id="business" class="books">
+    <h2>Business Books</h2>
+    <img src="https://covers.openlibrary.org/b/id/11055654-L.jpg" alt="Business 1">
+    <img src="https://covers.openlibrary.org/b/id/240735-L.jpg" alt="Business 2">
+    <img src="https://covers.openlibrary.org/b/id/8232481-L.jpg" alt="Business 3">
+  </div>
+
+  <div id="motivational" class="books">
+    <h2>Motivational Books</h2>
+    <img src="https://covers.openlibrary.org/b/id/240739-L.jpg" alt="Motivational 1">
+    <img src="https://covers.openlibrary.org/b/id/8235276-L.jpg" alt="Motivational 2">
+    <img src="https://covers.openlibrary.org/b/id/8235881-L.jpg" alt="Motivational 3">
+  </div>
+
+  <div id="skills" class="books">
+    <h2>Skill Improvement Books</h2>
+    <img src="https://covers.openlibrary.org/b/id/240734-L.jpg" alt="Skills 1">
+    <img src="https://covers.openlibrary.org/b/id/8232786-L.jpg" alt="Skills 2">
+    <img src="https://covers.openlibrary.org/b/id/8233471-L.jpg" alt="Skills 3">
+  </div>
+
+  <div id="others" class="books">
+    <h2>Other Books</h2>
+    <img src="https://covers.openlibrary.org/b/id/240741-L.jpg" alt="Other 1">
+    <img src="https://covers.openlibrary.org/b/id/8233191-L.jpg" alt="Other 2">
+    <img src="https://covers.openlibrary.org/b/id/8233446-L.jpg" alt="Other 3">
+  </div>
+
+  <footer>© 2025 Library | Designed with ❤️</footer>
+
+  <script>
+    function toggleBooks(category) {
+      let sections = document.querySelectorAll(".books");
+      sections.forEach(sec => {
+        if(sec.id === category) {
+          sec.style.display = sec.style.display === "block" ? "none" : "block";
+        } else {
+          sec.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
